@@ -9,7 +9,6 @@
             {{ session('success') }}
         </div>
     @endif --}}
-
     <p style="color: #8B6B3E;">
         N'hésitez pas à nous contacter pour toute question ou suggestion. Nous sommes là pour vous aider.
     </p>
