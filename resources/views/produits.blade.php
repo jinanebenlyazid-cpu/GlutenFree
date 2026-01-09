@@ -15,7 +15,14 @@
             @foreach ($products as $produit)
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm border-0">
-                        <img src={{ asset('images/'.$produit['image']) }} 
+                        @php
+                            // On enlève le slash au début si présent
+                            $url = asset('images/' . ltrim($produit['image'], '/'));
+                            
+                            // On remplace les doubles slashs éventuels par un seul
+                            $url = preg_replace('#(?<!:)//+#', '/', $url);
+                        @endphp
+                        <img src="{{ $url }}" 
                              class="card-img-top" 
                              alt="{{ $produit['nom'] }}" 
                              style="height: 250px; object-fit: cover;">
