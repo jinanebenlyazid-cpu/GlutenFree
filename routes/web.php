@@ -126,5 +126,5 @@ Route::get('/produits', function () {
         ],
     ];
 
-    return view('Produits', ['allProducts' => $produits]);
+    return view('produits', ['allProducts' => $produits]);
 });
